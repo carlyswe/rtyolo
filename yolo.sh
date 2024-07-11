@@ -2,5 +2,5 @@
 
 python /rtyolo/predict_api.py --device cpu &
 
-python /rtyolo/myclient.py $1
+python /rtyolo/myclient.py $2
 
