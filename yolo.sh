@@ -2,5 +2,5 @@
 
 python predict_api.py --device cpu &
 
-python myclient.py 
+python myclient.py $1
 
