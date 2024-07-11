@@ -14,10 +14,17 @@ int main(int argc, char *argv [])
     //arg[3] will be the sleeptime we pass to pyhton
 
 
-    //put error checking on the arguement numbers and exit if bad
+  
 
     cout << "number of args is " << argc << endl;
-    cout << argv[1] << " " << argv[2] << " " << endl;
+    cout << argv[1] << " " << argv[2] << " " << agrv[3] << endl;
+
+    //put error checking on the arguement numbers and exit if bad
+    if(argc != 4)
+    {
+        cout << "must provide policy, priority, and sleeptime" << endl;
+        return 0;
+    }
 
     sched_param param;
     pid_t processID = getpid();
