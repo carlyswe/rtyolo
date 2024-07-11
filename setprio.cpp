@@ -17,7 +17,7 @@ int main(int argc, char *argv [])
   
 
     cout << "number of args is " << argc << endl;
-    cout << argv[1] << " " << argv[2] << " " << agrv[3] << endl;
+    cout << argv[1] << " " << argv[2] << " " << argv[3] << endl;
 
     //put error checking on the arguement numbers and exit if bad
     if(argc != 4)
