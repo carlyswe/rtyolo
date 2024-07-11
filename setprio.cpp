@@ -11,6 +11,8 @@ int main(int argc, char *argv [])
     //argv[1] will be policy, argv[2] will be priority
     //argv[3] will be the application? in the future
 
+    //arg[3] will be the sleeptime we pass to pyhton
+
 
     //put error checking on the arguement numbers and exit if bad
 
@@ -81,7 +83,7 @@ int main(int argc, char *argv [])
     //int success2 = execl("/usr/local/bin/python", "python", "/YOLOv8API/myclient.py", "myclient.py", (char*)0);
 
     //i think need path to bash also
-    int success2 = execl("/usr/bin/bash", "bash", "/YOLOv8API/yolo.sh", "yolo.sh", (char*)0);
+    int success2 = execl("/usr/bin/bash", "bash", "/YOLOv8API/yolo.sh", "yolo.sh", argv[3], (char*)0);
 
     if(success2 == -1)
     {
