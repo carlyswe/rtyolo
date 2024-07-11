@@ -90,7 +90,7 @@ int main(int argc, char *argv [])
     //int success2 = execl("/usr/local/bin/python", "python", "/YOLOv8API/myclient.py", "myclient.py", (char*)0);
 
     //i think need path to bash also
-    int success2 = execl("/usr/bin/bash", "bash", "/YOLOv8API/yolo.sh", "yolo.sh", argv[3], (char*)0);
+    int success2 = execl("/usr/bin/bash", "bash", "/rtyolo/yolo.sh", "yolo.sh", argv[3], (char*)0);
 
     if(success2 == -1)
     {
