@@ -1,6 +1,6 @@
 #!/bin/bash
 
-python predict_api.py --device cpu &
+python /rtyolo/predict_api.py --device cpu &
 
-python myclient.py $1
+python /rtyolo/myclient.py $1
 
