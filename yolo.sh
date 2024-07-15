@@ -2,7 +2,7 @@
 
 python /rtyolo/predict_api.py --device cpu &
 
-sleep 5
+sleep 10
 
 python /rtyolo/myclient.py $2
 
