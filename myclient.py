@@ -5,6 +5,8 @@ import sys
 if __name__ == "__main__":
 
     sleeptime = int(sys.argv[1])
+
+    sleep(15)
     
     for i in range(10000):
         #call our command
