@@ -9,15 +9,10 @@ using namespace std;
 int main(int argc, char *argv [])
 {
     //argv[1] will be policy, argv[2] will be priority
-    //argv[3] will be the application? in the future
-
     //arg[3] will be the sleeptime we pass to pyhton
 
-
-  
-
-    cout << "number of args is " << argc << endl;
-    cout << argv[1] << " " << argv[2] << " " << argv[3] << endl;
+    //cout << "number of args is " << argc << endl;
+    //cout << argv[1] << " " << argv[2] << " " << argv[3] << endl;
 
     //put error checking on the arguement numbers and exit if bad
     if(argc != 4)
@@ -32,7 +27,7 @@ int main(int argc, char *argv [])
     string policy = argv[1];
     int policynum;
 
-    cout << "priority number is set to : " << param.sched_priority << endl;
+    //cout << "priority number is set to : " << param.sched_priority << endl;
 
     if(policy == "SCHED_OTHER")
     {
@@ -71,7 +66,7 @@ int main(int argc, char *argv [])
         cout << "Invalid scheduling policy" << endl;
     }
     
-    cout << "policy num is : " << policynum << endl;
+    //cout << "policy num is : " << policynum << endl;
 
     //need to put error checking that the sched type and value are acceptable matches & that this is even given proper ammt of args
 
@@ -88,8 +83,7 @@ int main(int argc, char *argv [])
 
     //i think for now we will hardcode yolo myclient in here so simplfiy the dcoker run and then see how we can add variables for other parts
     //int success2 = execl("/usr/local/bin/python", "python", "/YOLOv8API/myclient.py", "myclient.py", (char*)0);
-
-    //i think need path to bash also
+    
     int success2 = execl("/usr/bin/bash", "bash", "/rtyolo/yolo.sh", "yolo.sh", argv[3], (char*)0);
 
     if(success2 == -1)
