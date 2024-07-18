@@ -14,8 +14,10 @@ int main(int argc, char *argv [])
     //cout << "number of args is " << argc << endl;
     //cout << argv[1] << " " << argv[2] << " " << argv[3] << endl;
 
+    //amount of sleeptime is now in other container
+
     //put error checking on the arguement numbers and exit if bad
-    if(argc != 4)
+    if(argc != 3)
     {
         cout << "must provide policy, priority, and sleeptime" << endl;
         return 0;
@@ -82,9 +84,9 @@ int main(int argc, char *argv [])
 
 
     //i think for now we will hardcode yolo myclient in here so simplfiy the dcoker run and then see how we can add variables for other parts
-    //int success2 = execl("/usr/local/bin/python", "python", "/YOLOv8API/myclient.py", "myclient.py", (char*)0);
+    int success2 = execl("/usr/local/bin/python", "python", "/rtyolo/predict_api.py", "predict_api.py", "--device", "cpu",(char*)0);
     
-    int success2 = execl("/usr/bin/bash", "bash", "/rtyolo/yolo.sh", "yolo.sh", argv[3], (char*)0);
+    //int success2 = execl("/usr/bin/bash", "bash", "/rtyolo/yolo.sh", "yolo.sh", argv[3], (char*)0);
 
     if(success2 == -1)
     {
