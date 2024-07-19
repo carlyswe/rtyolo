@@ -4,7 +4,7 @@ import sys
 
 if __name__ == "__main__":
 
-    sleeptime = int(sys.argv[1])
+    sleeptime = float(sys.argv[1])
   
   
     for i in range(1000):
