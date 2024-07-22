@@ -9,14 +9,8 @@ using namespace std;
 int main(int argc, char *argv [])
 {
     //argv[1] will be policy, argv[2] will be priority
-    //arg[3] will be the sleeptime we pass to pyhton
-
-    //cout << "number of args is " << argc << endl;
-    //cout << argv[1] << " " << argv[2] << " " << argv[3] << endl;
-
-    //amount of sleeptime is now in other container
-
-    //put error checking on the arguement numbers and exit if bad
+    
+    //error checking on the arguement numbers and exit if bad
     if(argc != 3)
     {
         cout << "must provide policy, priority, and sleeptime" << endl;
@@ -28,8 +22,6 @@ int main(int argc, char *argv [])
     param.sched_priority = atoi(argv[2]);
     string policy = argv[1];
     int policynum;
-
-    //cout << "priority number is set to : " << param.sched_priority << endl;
 
     if(policy == "SCHED_OTHER")
     {
@@ -68,10 +60,8 @@ int main(int argc, char *argv [])
         cout << "Invalid scheduling policy" << endl;
     }
     
-    //cout << "policy num is : " << policynum << endl;
 
-    //need to put error checking that the sched type and value are acceptable matches & that this is even given proper ammt of args
-
+    //need to put error checking that the sched type and value are acceptable matches
 
     int success = sched_setscheduler(processID, policynum, &param);
 
@@ -83,11 +73,7 @@ int main(int argc, char *argv [])
     }
 
 
-    //i think for now we will hardcode yolo myclient in here so simplfiy the dcoker run and then see how we can add variables for other parts
     int success2 = execl("/usr/local/bin/python", "python", "/rtyolo/predict_api.py", "predict_api.py", "--device", "cpu",(char*)0);
-    
-    //int success2 = execl("/usr/bin/bash", "bash", "/rtyolo/yolo.sh", "yolo.sh", argv[3], (char*)0);
-
     if(success2 == -1)
     {
        cout << "error with the execl : " << errno << endl;
