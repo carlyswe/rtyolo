@@ -8,6 +8,6 @@ if __name__ == "__main__":
     port = str(sys.argv[2])
     url = 'http://117.16.143.43:' + port + '/predict?source=https://raw.githubusercontent.com/ultralytics/ultralytics/main/ultralytics/assets/zidane.jpg'
   
-    for i in range(50):
+    for i in range(20):
         sleep(sleeptime)
         resp = requests.get(url, verify=False)
